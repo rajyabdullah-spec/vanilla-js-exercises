@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 7: DOM Master</title>
+    <style>
+        .container { margin-bottom: 30px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="textContainer">Original Text</div>
+        <button id="changeTextBtn">Change Text</button>
+    </div>
+
+
+    <div class="container">
+        <ul id="todoList">
+            <li>Learn HTML</li>
+            <li>Learn CSS</li>
+        </ul>
+        <button id="addTodoBtn">Add New Item</button>
+    </div>
+
+ 
+    <div class="container">
+        <img id="myImage" src="images/florian-olivo-4hbJ-eymZ1o-unsplash.jpg" alt="Placeholder" width="150">
+        <br>
+        <button id="changeImageBtn">Change Image</button>
+    </div>
+
+ 
+    <div class="container">
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p id="loginMessage"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

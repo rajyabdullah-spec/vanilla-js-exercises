@@ -13,5 +13,5 @@ const car = {
 };
 
 console.log("--- Car Instance Test ---");
-car.start(); // استدعاء ميثود التشغيل
-car.drive(); // استدعاء ميثود القيادة
+car.start(); 
+car.drive();

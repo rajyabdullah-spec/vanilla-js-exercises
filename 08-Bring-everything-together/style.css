@@ -1,0 +1,22 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.table thead {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+}
+
+
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.01);
+    transition: 0.2s;
+}

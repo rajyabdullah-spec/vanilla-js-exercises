@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raji's Interactive Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+    <div class="container py-5">
+        <header class="text-center mb-5">
+            <h1 class="display-4">Raji Al-Abdullah's Task Manager</h1>
+            <p class="lead">Interactive Assignment Schedule - Matrix Master Bootcamp</p>
+        </header>
+
+        <div class="card shadow-sm mb-5">
+            <div class="card-body">
+                <h2 class="card-title h4 mb-3">Weekly Assignment Schedule</h2>
+                <table class="table table-hover border">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Task Description</th>
+                            <th>Deadline</th>
+                        </tr>
+                    </thead>
+                    <tbody id="assignmentTable">
+                        <tr>
+                            <td>1</td>
+                            <td>Fixing Code Indentation</td>
+                            <td>Monday 20:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card shadow-sm mx-auto" style="max-width: 600px;">
+            <div class="card-body">
+                <h2 class="card-title h4 mb-4">Add New Assignment</h2>
+                <form id="assignmentForm">
+                    <div class="mb-3">
+                        <label for="taskInput" class="form-label">Task Description</label>
+                        <input type="text" id="taskInput" class="form-control" placeholder="e.g. Building My First Website" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="deadlineInput" class="form-label">Deadline</label>
+                        <input type="text" id="deadlineInput" class="form-control" placeholder="e.g. Tuesday 20:00" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Add to Schedule</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

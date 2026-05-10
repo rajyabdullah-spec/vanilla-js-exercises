@@ -1,0 +1,42 @@
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.calculator-card {
+    background-color: #222;
+    border-radius: 20px;
+    width: 320px;
+}
+
+#display {
+    background-color: #333;
+    color: #00ff00;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 15px;
+}
+
+.btn {
+    height: 60px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.btn-light {
+    background-color: #444;
+    color: white;
+    border: none;
+}
+
+.btn-light:hover {
+    background-color: #555;
+    color: white;
+}
+
+.op-btn {
+    background-color: #f39c12 !important;
+    color: white;
+}

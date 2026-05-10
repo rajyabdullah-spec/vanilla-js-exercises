@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    transition: all 0.5s ease;
+}
+
+#my-form {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+
+.btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.items {
+    list-style: none;
+    padding: 0;
+}
+
+.items li {
+    background: #f4f4f4;
+    margin: 5px 0;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.bg-dark {
+    background-color: #333 !important;
+    color: white !important;
+}
+
+.bg-dark .items li {
+    color: #333;
+}

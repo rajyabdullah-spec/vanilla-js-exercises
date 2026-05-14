@@ -1,0 +1,117 @@
+// --- Elements ---
+const timerLabel = document.getElementById('timer-label');
+const timeLeftDisplay = document.getElementById('time-left');
+const breakLengthDisplay = document.getElementById('break-length');
+const sessionLengthDisplay = document.getElementById('session-length');
+const beep = document.getElementById('beep');
+const container = document.getElementById('main-container');
+const startStopBtn = document.getElementById('start_stop');
+
+// --- State ---
+let breakLength = 5;
+let sessionLength = 25;
+let timeLeft = 25 * 60;
+let timerId = null;
+let isSession = true;
+let isRunning = false;
+let pressTimer = null;
+
+// --- Functions ---
+const updateDisplay = () => {
+    const mins = Math.floor(timeLeft / 60);
+    const secs = timeLeft % 60;
+    const formatted = `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    timeLeftDisplay.textContent = formatted;
+    document.title = `(${formatted}) Pomodoro`;
+};
+
+const handleSwitch = () => {
+    beep.play();
+    isSession = !isSession;
+    timerLabel.textContent = isSession ? "Session" : "Break";
+    timeLeft = (isSession ? sessionLength : breakLength) * 60;
+    container.className = isSession ? 'glass-panel session-active' : 'glass-panel break-active';
+    updateDisplay();
+};
+
+const startStop = () => {
+    if (isRunning) {
+        clearInterval(timerId);
+        isRunning = false;
+        startStopBtn.textContent = "Start";
+    } else {
+        isRunning = true;
+        startStopBtn.textContent = "Pause";
+        timerId = setInterval(() => {
+            if (timeLeft > 0) {
+                timeLeft--;
+                updateDisplay();
+            } else {
+                handleSwitch();
+            }
+        }, 1000);
+    }
+};
+
+const reset = () => {
+    clearInterval(timerId);
+    isRunning = false;
+    isSession = true;
+    breakLength = 5;
+    sessionLength = 25;
+    timeLeft = 25 * 60;
+    timerLabel.textContent = "Session";
+    breakLengthDisplay.textContent = breakLength;
+    sessionLengthDisplay.textContent = sessionLength;
+    startStopBtn.textContent = "Start";
+    beep.pause();
+    beep.currentTime = 0;
+    container.className = 'glass-panel';
+    updateDisplay();
+};
+
+// --- Long Press Support ---
+const startContinuousChange = (action) => {
+    if (isRunning) return;
+    action();
+    pressTimer = setInterval(action, 150);
+};
+
+const stopContinuousChange = () => {
+    clearInterval(pressTimer);
+};
+
+// --- Event Listeners ---
+
+// Break Controls
+const bInc = document.getElementById('break-increment');
+const bDec = document.getElementById('break-decrement');
+bInc.onmousedown = () => startContinuousChange(() => {
+    if(breakLength < 60) { breakLength++; breakLengthDisplay.textContent = breakLength; if(!isSession) {timeLeft = breakLength * 60; updateDisplay();}}
+});
+bDec.onmousedown = () => startContinuousChange(() => {
+    if(breakLength > 1) { breakLength--; breakLengthDisplay.textContent = breakLength; if(!isSession) {timeLeft = breakLength * 60; updateDisplay();}}
+});
+
+// Session Controls
+const sInc = document.getElementById('session-increment');
+const sDec = document.getElementById('session-decrement');
+sInc.onmousedown = () => startContinuousChange(() => {
+    if(sessionLength < 60) { sessionLength++; sessionLengthDisplay.textContent = sessionLength; if(isSession) {timeLeft = sessionLength * 60; updateDisplay();}}
+});
+sDec.onmousedown = () => startContinuousChange(() => {
+    if(sessionLength > 1) { sessionLength--; sessionLengthDisplay.textContent = sessionLength; if(isSession) {timeLeft = sessionLength * 60; updateDisplay();}}
+});
+
+// Stop long press on mouse up/leave
+[bInc, bDec, sInc, sDec].forEach(btn => {
+    btn.onmouseup = stopContinuousChange;
+    btn.onmouseleave = stopContinuousChange;
+});
+
+// Main Controls
+startStopBtn.onclick = startStop;
+document.getElementById('reset').onclick = reset;
+
+// Initialize Display
+updateDisplay();

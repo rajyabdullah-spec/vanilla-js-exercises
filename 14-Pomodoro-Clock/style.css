@@ -1,0 +1,78 @@
+:root {
+    --session-color: #667eea;
+    --break-color: #10b981;
+}
+
+body {
+    background: #0f172a;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    margin: 0;
+    overflow: hidden;
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    padding: 40px;
+    width: 500px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.session-active { border-color: var(--session-color); box-shadow: 0 0 30px rgba(102, 126, 234, 0.15); }
+.break-active { border-color: var(--break-color); box-shadow: 0 0 30px rgba(16, 185, 129, 0.15); }
+
+.time-main {
+    font-size: 7rem; 
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+.row {
+    width: 100%;
+    margin: 20px 0;
+}
+
+
+.col-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.ctrl-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+    user-select: none;
+}
+
+.ctrl-btn:hover { background: rgba(255, 255, 255, 0.2); }
+
+.action-btn {
+    border-radius: 12px;
+    padding: 12px 25px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+}
+
+#start_stop { background: white; color: #0f172a; width: 150px; }
+#reset { background: transparent; color: white; border: 1px solid rgba(255, 255, 255, 0.3); }
+
+.action-btn:hover { transform: translateY(-3px); }

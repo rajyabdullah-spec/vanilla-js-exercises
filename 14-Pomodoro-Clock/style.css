@@ -8,7 +8,11 @@ body {
     font-family: 'Inter', sans-serif;
     color: white;
     margin: 0;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .glass-panel {
@@ -16,31 +20,28 @@ body {
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 40px;
-    padding: 50px 40px;
+    padding: 30px 20px;
     width: 90%;
-    max-width: 480px;
-    min-height: 580px;
+    max-width: 420px; /* تصميم مدمج وأنيق */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
 .session-active { 
     border-color: var(--session-color); 
-    box-shadow: 0 0 50px rgba(102, 126, 234, 0.15), inset 0 0 20px rgba(102, 126, 234, 0.05); 
+    box-shadow: 0 0 40px rgba(102, 126, 234, 0.15); 
 }
 .break-active { 
     border-color: var(--break-color); 
-    box-shadow: 0 0 50px rgba(16, 185, 129, 0.15), inset 0 0 20px rgba(16, 185, 129, 0.05); 
+    box-shadow: 0 0 40px rgba(16, 185, 129, 0.15); 
 }
 
 #time-left {
-    font-size: clamp(5rem, 18vw, 7.5rem);
+    font-size: clamp(4.5rem, 16vw, 6.5rem);
     font-weight: 900;
-    margin: 20px 0;
+    margin: 10px 0;
     font-variant-numeric: tabular-nums;
     font-family: 'JetBrains Mono', monospace;
     letter-spacing: -2px;
@@ -48,9 +49,9 @@ body {
 
 .row {
     width: 100%;
-    margin: 25px 0;
+    margin: 20px 0;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .col-6 {
@@ -61,50 +62,43 @@ body {
 }
 
 #break-length, #session-length {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    margin: 0 15px; 
-    min-width: 50px; 
+    margin: 0 12px;
+    min-width: 45px;
+    text-align: center;
     display: inline-block;
-    text-align: center; 
-    vertical-align: middle;
 }
-
-.d-flex.align-items-center.justify-content-center.gap-2 {
-    gap: 10px !important;
-}
-
 
 .ctrl-btn {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: white;
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     border-radius: 12px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
-    user-select: none;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    transition: 0.3s;
+    user-select: none;
 }
 
-.ctrl-btn:hover { background: var(--session-color); border-color: transparent; }
+.ctrl-btn:hover { background: var(--session-color); }
 
 .action-btn {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border: none;
     color: white;
-    border-radius: 18px;
-    padding: 15px 35px;
+    border-radius: 15px;
+    padding: 12px 25px;
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.3s ease;
-    min-width: 140px;
+    transition: 0.3s;
+    min-width: 120px;
 }
 
 .action-btn.outline {
@@ -112,4 +106,16 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.action-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+/* حل مشكلة التداخل في الموبايلات الصغيرة جداً */
+@media (max-width: 380px) {
+    .row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .col-6 {
+        border: none !important;
+    }
+    .glass-panel {
+        padding: 20px 15px;
+    }
+}

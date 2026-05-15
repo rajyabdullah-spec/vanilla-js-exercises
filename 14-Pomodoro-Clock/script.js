@@ -23,7 +23,7 @@ const updateDisplay = () => {
 };
 
 const handleSwitch = () => {
-    try { beep.play(); } catch(e) { console.warn("Audio play blocked"); }
+    try { beep.play(); } catch(e) { console.warn("Audio interaction required"); }
     isSession = !isSession;
     timerLabel.textContent = isSession ? "Session" : "Break";
     timeLeft = (isSession ? sessionLength : breakLength) * 60;
@@ -69,7 +69,8 @@ const reset = () => {
     updateDisplay();
 };
 
-const setupControls = (element, action) => {
+const setupControls = (id, action) => {
+    const el = document.getElementById(id);
     const startAction = (e) => {
         if (isRunning) return;
         e.preventDefault();
@@ -78,27 +79,29 @@ const setupControls = (element, action) => {
     };
     const stopAction = () => clearInterval(pressTimer);
 
-    element.onmousedown = startAction;
-    element.onmouseup = element.onmouseleave = stopAction;
-    element.ontouchstart = startAction;
-    element.ontouchend = stopAction;
+    el.onmousedown = startAction;
+    el.onmouseup = el.onmouseleave = stopAction;
+    el.ontouchstart = startAction;
+    el.ontouchend = stopAction;
 };
 
-setupControls(document.getElementById('break-increment'), () => {
+// ربط أزرار التحكم
+setupControls('break-increment', () => {
     if(breakLength < 60) { breakLength++; breakLengthDisplay.textContent = breakLength; if(!isSession) {timeLeft = breakLength * 60; updateDisplay();}}
 });
-setupControls(document.getElementById('break-decrement'), () => {
+setupControls('break-decrement', () => {
     if(breakLength > 1) { breakLength--; breakLengthDisplay.textContent = breakLength; if(!isSession) {timeLeft = breakLength * 60; updateDisplay();}}
 });
-setupControls(document.getElementById('session-increment'), () => {
+setupControls('session-increment', () => {
     if(sessionLength < 60) { sessionLength++; sessionLengthDisplay.textContent = sessionLength; if(isSession) {timeLeft = sessionLength * 60; updateDisplay();}}
 });
-setupControls(document.getElementById('session-decrement'), () => {
+setupControls('session-decrement', () => {
     if(sessionLength > 1) { sessionLength--; sessionLengthDisplay.textContent = sessionLength; if(isSession) {timeLeft = sessionLength * 60; updateDisplay();}}
 });
 
 startStopBtn.onclick = startStop;
 document.getElementById('reset').onclick = reset;
 
+// التشغيل الأولي
 updateDisplay();
 container.classList.add('session-active');

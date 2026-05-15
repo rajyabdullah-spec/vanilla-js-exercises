@@ -22,7 +22,7 @@ body {
     border-radius: 40px;
     padding: 30px 20px;
     width: 90%;
-    max-width: 420px; /* تصميم مدمج وأنيق */
+    max-width: 420px; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -106,7 +106,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* حل مشكلة التداخل في الموبايلات الصغيرة جداً */
 @media (max-width: 380px) {
     .row {
         flex-direction: column;

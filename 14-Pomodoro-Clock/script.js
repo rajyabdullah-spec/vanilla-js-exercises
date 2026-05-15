@@ -85,7 +85,7 @@ const setupControls = (id, action) => {
     el.ontouchend = stopAction;
 };
 
-// ربط أزرار التحكم
+
 setupControls('break-increment', () => {
     if(breakLength < 60) { breakLength++; breakLengthDisplay.textContent = breakLength; if(!isSession) {timeLeft = breakLength * 60; updateDisplay();}}
 });
@@ -102,6 +102,6 @@ setupControls('session-decrement', () => {
 startStopBtn.onclick = startStop;
 document.getElementById('reset').onclick = reset;
 
-// التشغيل الأولي
+
 updateDisplay();
 container.classList.add('session-active');

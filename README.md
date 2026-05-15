@@ -1,29 +1,34 @@
-# Vanilla JavaScript Exercises 🚀
+# 🚀 Vanilla JavaScript Mastery Lab
 
-This repository contains a series of practical exercises completed during my journey learning JavaScript with **Matrix Master** and **Codecademy**.
+A collection of professional, hands-on exercises and full-scale projects developed during my intensive training with **Matrix Master** and **Codecademy**. This repository documents my transition from fundamental logic to advanced DOM manipulation and state management.
 
-## 📁 Project Structure
+## 📁 Project Roadmap & Progress
 
-The exercises are organized into dedicated folders, each focusing on a specific core concept of JavaScript:
+The exercises are categorized by technical complexity, ranging from core syntax to interactive web applications.
 
-*   **01-Variables:** Basics of variable declaration and data types.
-*   **02-Functions:** Creating and invoking reusable code blocks.
-*   **03-Arrays-Loops:** Data structures and iteration techniques.
-*   **04-Objects:** Storing and accessing structured data.
-*   **05-Objects-as-Classes:** Understanding OOP concepts and methods.
-*   **06-Window-Object:** Interacting with the browser environment.
-*   **07-DOM-Manipulation:** Building interactive and dynamic web pages.
+| Category | Focus Area | Key Projects | Status |
+| :--- | :--- | :--- | :--- |
+| **01-05 Foundations** | Core JS Logic | Variables, Loops, Objects, Classes | ✅ Completed |
+| **06-10 Browser API** | DOM & BOM | Window Object, Event Listeners, Dynamic UI | ✅ Completed |
+| **11-13 Logic Lab** | Algorithms | Summation, Arrays, Math Challenges | ✅ Completed |
+| **14-Advanced** | State Management | **Pomodoro Focus Clock** | 🚀 Featured |
 
-## 🛠️ Technologies Used
-*   JavaScript (ES6+)
-*   HTML5
-*   CSS3
-*   Node.js (for local testing)
+## 🌟 Featured Project: Pomodoro Clock (Assignment 14)
+My most advanced project in this lab, focusing on:
+* **Asynchronous Logic**: Precision timing using `setInterval`.
+* **State Control**: Automatic switching between "Work" and "Break" sessions.
+* **Modern UX**: Long-press functionality for fast time adjustment and Glassmorphism UI.
+* **Responsive Design**: Fully optimized for Desktop and Mobile (Touch-enabled).
 
-## 🚀 How to Run
-1. Clone the repository.
-2. Open any folder to explore the code.
-3. Open the `index.html` file in your browser to see the DOM exercises in action.
+## 🛠️ Engineering Stack
+* **Language**: JavaScript (ES6+) - [Arrow Functions, Template Literals, Destructuring].
+* **Styling**: CSS3 (Glassmorphism, Flexbox/Grid) & Bootstrap 5.
+* **Methodology**: T-Diagram analysis for logical verification before coding.
+
+## 🚀 Getting Started
+1. **Clone**: `git clone https://github.com/rajyabdullah-spec/vanilla-js-exercises.git`
+2. **Explore**: Navigate to any folder (e.g., `/14-Pomodoro-Clock`) to view the source.
+3. **Launch**: Open `index.html` via Live Server or any modern browser.
 
 ---
-*Developed by Raji Al-Abdullah*
+*Engineered with Passion by Raji Al-Abdullah - 2026*

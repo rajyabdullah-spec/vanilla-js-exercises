@@ -1,10 +1,10 @@
 # 🚀 Vanilla JavaScript Mastery Lab
 
-A collection of professional, hands-on exercises and full-scale projects developed during my intensive training with **Matrix Master** and **Codecademy**. This repository documents my transition from fundamental logic to advanced DOM manipulation, modern state management, and network architecture.
+A collection of professional, hands-on exercises and full-scale projects developed during my intensive training with **Matrix Master** and **Codecademy**. This repository documents my transition from fundamental logic to advanced DOM manipulation and foundational state management systems.
 
 ## 📁 Project Roadmap & Progress
 
-The exercises are categorized by technical complexity, ranging from core syntax to architectural patterns and API integrations.
+The exercises are categorized by technical complexity, ranging from core syntax to functional architectural patterns.
 
 | Category | Focus Area | Key Projects | Status |
 | :--- | :--- | :--- | :--- |
@@ -13,24 +13,22 @@ The exercises are categorized by technical complexity, ranging from core syntax 
 | **11-13 Logic Lab** | Algorithms | Summation, Arrays, Math Challenges | ✅ Completed |
 | **14-Advanced** | State Management | Pomodoro Focus Clock | ✅ Completed |
 | **15-Architecture** | OOP & Async | OOP Putting Everything Together | ✅ Completed |
-| **16-Networking** | AJAX & APIs | **Tenor GIF Fetch Application** | 🚀 Featured |
 
-## 🌟 Featured Project: AJAX & Networking Architecture (Assignment 16)
-My latest implementation focusing on live asynchronous communication and data handling:
-* **Asynchronous Requests**: Utilizing the classic `XMLHttpRequest` (XHR) object to fetch live web data without triggering full page reloads.
-* **HTTP Protocol & Safety**: Monitoring `readyState` cycles (0 to 4) alongside HTTP Status Codes (`200 OK`, `404 Not Found`) for error-free data delivery.
-* **Data Interchange (JSON)**: Mastering text-to-object translation via `JSON.parse()` to handle dynamic server responses.
-* **Dynamic DOM UI Injection**: Transforming raw text payloads into structural HTML Bootstrap cards mapped over user input queries.
+## 🌟 Featured Project: Pomodoro Focus Clock (Assignment 14)
+My core implementation focusing on operational logic and real-time interface rendering:
+* **State Tracking**: Managing synchronous interval engines (`setInterval`) to drive countdown timers accurately without interface lagging.
+* **Dynamic DOM Controls**: Manipulating UI element states, text payloads, and input triggers natively based on timer cycles.
+* **Visual Isolation**: Keeping layout states cleanly orchestrated inside dedicated style layers.
 
 ## 🛠️ Engineering Stack
-* **Language**: JavaScript (ES6+) - [XHR Architecture, JSON Serialization, Asynchronous Callbacks].
-* **Styling**: Modern CSS3 & Bootstrap 5 (Responsive Grid, Interactive Card States).
-* **Methodology**: Strict compliance with network debugging rules and clean separation of concerns.
+* **Language**: JavaScript (ES6+) - [Functional Logic, DOM Event Loops, Object-Oriented Principles].
+* **Styling**: Modern CSS3 & Bootstrap 5 (Responsive Layouts, Interactive States).
+* **Methodology**: Strict compliance with code modularity and clean separation of concerns.
 
 ## 🚀 Getting Started
 1. **Clone**: `git clone https://github.com/rajyabdullah-spec/vanilla-js-exercises.git`
-2. **Explore**: Navigate to any folder (e.g., `/16-AJAX-and-APIs`) to view the source.
-3. **Launch**: Open `index.html` via Live Server or any modern browser to search and render real-time GIFs.
+2. **Explore**: Navigate to any directory (e.g., `/14-Advanced-Pomodoro`) to view the clean source code.
+3. **Launch**: Open `index.html` via Live Server or any modern browser to interact with the application.
 
 ---
-*Engineered with Passion by Raji Al-Abdullah - 2026*
+*Engineered with Passion by **Raji Al-Abdullah** - 2026 🚀*
